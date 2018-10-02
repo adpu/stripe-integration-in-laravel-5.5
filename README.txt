@@ -1,8 +1,10 @@
-Example of integrate Stripe payment gateway in Laravel 5.5
+## Example of integrate Stripe payment gateway in Laravel 5.5
 
-Steps:
+# Steps:
 
 1 -  Add this lines in require section of composer.json:
+
+### Code block 
 
 "cartalyst/stripe-laravel": "7.0.*"
 
@@ -12,26 +14,33 @@ composer update
 
 3 - Add this lines from your skype account inside .env file:
 
+### Code block 
+
 STRIPE_KEY=XXXXXXXXXX
 STRIPE_SECRET=XXXXXXXXXX
 
 4 - Inside config/app-php add 'provider' and 'aliases':
 
 // Provider
+### Code block 
 
 Cartalyst\Stripe\Laravel\StripeServiceProvider::class,
 
 // Aliases
+### Code block 
 
 'Stripe' => Cartalyst\Stripe\Laravel\Facades\Stripe::class,
 
 5 - Inside routes/web.php add this lines
+
+### Code block 
 
 Route::get('addmoney/stripe', array('as' => 'addmoney.paywithstripe','uses' => 'AddMoneyController@payWithStripe'));
 Route::post('addmoney/stripe', array('as' => 'addmoney.stripe','uses' => 'AddMoneyController@postPaymentWithStripe'));
 
 6 - Create controller (AddMoneyController):
 
+### Code block 
 <?php
 namespace App\Http\Controllers;
 use App\Http\Requests;
@@ -119,6 +128,7 @@ if (!isset($token['id'])) {
 
 7 - Create view (paywithstripe.blade.php)
 
+### Code block 
 <html>
 <head>
     </head>
@@ -162,6 +172,6 @@ if (!isset($token['id'])) {
 
 8 - Test it calling:  http://mydomain.com/addmoney/stripe
 
-References:
+# References:
 
 https://medium.com/@kshitij206/how-to-integrate-stripe-payment-gateway-in-laravel-5-5-c2965854b983
