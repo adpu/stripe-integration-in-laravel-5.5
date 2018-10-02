@@ -1,6 +1,6 @@
 # Example of integrate Stripe payment gateway in Laravel 5.5
 
-Steps:
+## Steps:
 
 1 -  Add this lines in require section of composer.json:
 
@@ -178,6 +178,6 @@ if (!isset($token['id'])) {
 
 8 - Test it calling:  http://mydomain.com/addmoney/stripe
 
-# References:
+## References:
 
 https://medium.com/@kshitij206/how-to-integrate-stripe-payment-gateway-in-laravel-5-5-c2965854b983
