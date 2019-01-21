@@ -76,7 +76,7 @@ public function postPaymentWithStripe(Request $request)
  $input = $request->all();
  if ($validator->passes()) { 
  $input = array_except($input,array('_token'));
- $stripe = Stripe::make('sk_test_U4n5mkkbFnqBTiCjtqvknMcm'); //set here your stripe secret key
+ $stripe = Stripe::make('Your stripe secret key'); //set here your stripe secret key
  try {
  $token = $stripe->tokens()->create([
  'card' => [
